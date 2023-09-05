@@ -68,5 +68,29 @@ padding:20px;
 
 #wow{
     font-size: 20px;
-    color:blue;
+}
+
+.content h1{
+    color:#fff;
+    padding-left:20px;
+}
+#portfolio {
+list-style-type:circle;
+padding-left:20;
+}
+
+#portfolio li{
+background: #84c5eb;
+padding:10px;
+border-radius:10px;
+margin-bottom:10px;
+}
+
+#portfolio li:hover{
+background:#eee;
+}
+
+portfolio a{
+text-deceration:none;
+color:#454545;
 }
