@@ -17,6 +17,7 @@ nav {
     padding: 10px;
   margin-bottom: 20px;
   border-radius: 0%;
+  border: 8px white ridge;
 }
 h1 {
     display: flex;
@@ -63,4 +64,9 @@ padding:14px;
 }
 #figcaptionone{
 padding:20px;
+}
+
+#wow{
+    font-size: 20px;
+    color:blue;
 }
