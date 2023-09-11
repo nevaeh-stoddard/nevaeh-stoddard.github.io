@@ -358,7 +358,7 @@ function projectileCollision() {
 }
 
 function deathOfPlayer() {
-  ctx.fillStyle = "grey";
+  ctx.fillStyle = "white";
   ctx.fillRect(
     canvas.width / 4,
     canvas.height / 6,
@@ -368,16 +368,23 @@ function deathOfPlayer() {
   ctx.fillStyle = "black";
   ctx.font = "800% serif";
   ctx.fillText(
-    "You are dead",
+    "COOL TIP:",
     canvas.width / 4,
     canvas.height / 6 + canvas.height / 5,
     (canvas.width / 16) * 14
   );
   ctx.font = "500% serif";
   ctx.fillText(
-    "Hit any key to restart",
+    "try jumping",
     canvas.width / 4,
     canvas.height / 6 + canvas.height / 3,
+    (canvas.width / 16) * 14
+  );
+  ctx.font = "200% serif";
+  ctx.fillText(
+    "(press any key to restart)",
+    canvas.width / 4,
+    canvas.height / 4 + canvas.height / 3,
     (canvas.width / 16) * 14
   );
   if (keyPress.any) {
