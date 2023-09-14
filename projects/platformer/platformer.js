@@ -57,9 +57,9 @@ createPlatform(100, 1, -10, 500);
     // Your collectable choices are 'database' 'diamond' 'grace' 'kennedi' 'max' and 'steve'; more can be added if you wish
     // example usage: createCollectable(type, x, y, gravity, bounce)
 
-    createCollectable("steve", 1150, 90, 0, 0.5);
-    createCollectable("grace", 1034, 570, 0, 0.5); 
-    createCollectable("diamond", 200, 300, 0, 0.5);
+    createCollectable("smileyguy", 1150, 90, 0, 0.5);
+    createCollectable("smileyguy", 1034, 570, 0, 0.5); 
+    createCollectable("smileyguy", 200, 300, 0, 0.5);
 
     // TODO 3
     // Create cannons
