@@ -42,7 +42,7 @@ a {
 main {
     background: rgb(245, 238, 219);
     display: flex;
-    border-radius: 9%;
+    border-radius: 0%;
 }
 .sidebar {
     margin-right: 200px;
