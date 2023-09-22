@@ -101,7 +101,7 @@ color:#454545;
 .column {
     float: left;
     width: 50%;
-    padding: 1px;
+    padding: 70px;
   }
   .row::after {
     content: "";
