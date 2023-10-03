@@ -67,6 +67,7 @@
 			var positionX = 0;
 			var points = 0;
 			var speed = 30;
+			var misclicks = 0;
 			
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
@@ -109,8 +110,10 @@
 
 		board.on('click', clearInterval)
 
-		function changeBoardText{
-			
+		function changeBoardText(newText){
+			board.text(misclicks);
+			misclicks = misclicks +1;
+
 		}
 		function endGame(){
 			clearInterval(interval){
