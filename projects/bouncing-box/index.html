@@ -66,7 +66,7 @@
 			
 			var positionX = 0;
 			var points = 0;
-			var speed = 10;
+			var speed = 20;
 			
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
@@ -94,14 +94,12 @@
 				positionX = 0;
 				changeBoxText(points);
 				points = points + 1;
-				speed = speed + 3;
 
-				if(speed >= 0){
-					speed = (speed + 3);
+				if(positionX > 0){
+					speed = speed + 3;
 				}
-
-				else if(speed < 0){
-					speed = (speed - 3);
+				if(positionX < 0){
+					speed = speed - 3;
 				}
 			};
 		})();
