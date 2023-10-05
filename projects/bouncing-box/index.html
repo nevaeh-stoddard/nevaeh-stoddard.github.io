@@ -102,13 +102,16 @@
 					speed = speed - 15;
 				}
 			};
-						///////////challenge attempts/////////
-			var colorStr = "rgb(50, 25, 250)";
-			box.css('background-color', colorStr);
+						///////////challenge attempts. SPOILER!!!! None of these work lol/////////
+			var colorStr = "rgb(50, 25,250)";
+			box.css('background-color', colorStr);{
 				function getRandomColor(){
 					var randomNumberBetween0and255 = 
-						Math.random(colorStr) * 255;
+						Math.random() * 255; {
+							const color = "rgb(" + r() + "," + r() + "," + r() + ")";
+						}
 				}
+			}
 			var misclicks = 0;
 			var interval = setInterval(update, 50);
 
@@ -116,7 +119,7 @@
 				misclicks = misclicks +1;
 				if(misclicks === 10){
 					function endGame(){
-						clearInterval(interval);
+						clearInterval(interval)
 						}
 					}
 				}
