@@ -32,7 +32,7 @@
 		(function(){
 			'use strict'
 			/* global jQuery */
-
+			
 			//////////////////////////////////////////////////////////////////
 			/////////////////// SETUP DO NOT DELETE //////////////////////////
 			//////////////////////////////////////////////////////////////////
@@ -66,8 +66,7 @@
 			
 			var positionX = 0;
 			var points = 0;
-			var speed = 30;
-			var misclicks = 0;
+			var speed = 15;
 			
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
@@ -82,7 +81,7 @@
 					speed = -speed;
 				}
 				if (positionX < 0 ){
-					speed = -1 * -30;
+					speed = -1 * -15;
 				}
 			};
 
@@ -97,24 +96,25 @@
 				points = points + 1;
 
 				if(speed > 0){
-					speed = speed + 3;
+					speed = speed + 15;
 				}
 				if(-speed){
-					speed = speed - 3;
+					speed = speed - 15;
 				}
 			};
 		})();
-
-		/// idk if this works///
-		function handleBoardClick(){
-			misclicks = misclicks +1;
-
-			if(misclicks === 10){
-				endGame();
-				clearInterval(interval);
-			}
-		}
+		/// 'update is not defined'///
+		var misclicks = 0;
 		var interval = setInterval(update, 50);
-	</script>
+
+		function handleBoardClick() {
+			misclicks = misclicks +1;
+				if(misclicks === 10){
+					function endGame(){
+						clearInterval(interval);
+						}
+					}
+				}
+				</script>
 </body>
 </html>
