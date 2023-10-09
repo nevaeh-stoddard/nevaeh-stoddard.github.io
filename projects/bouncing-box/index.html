@@ -65,18 +65,17 @@
 			//////////////////////////////////////////////////////////////////
 			
 			// TODO 2 - Variable declarations 
+
 			var boardHeight= jQuery(window).height();
-			
 			var randNum = Math.random() * boardWidth;
 			var randNumY= Math.random() * boardHeight;
 			var positionX = randNum;
 			var points = 0;
-			var speed = 15;
+			var speed = randNum;
 			var positionY = 0;
 			var speedY = randNumY;
-			var misclicks = 0;
+			var clicks = 0;
 			var interval = setInterval(update, 50);
-
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
 			it should move the Box to a new location. If the box drifts off the screen
