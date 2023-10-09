@@ -67,12 +67,13 @@
 			// TODO 2 - Variable declarations 
 			var boardHeight= jQuery(window).height();
 			
-			
-			var positionX = 0;
+			var randNum = Math.random() * boardWidth;
+			var randNumY= Math.random() * boardHeight;
+			var positionX = randNum;
 			var points = 0;
 			var speed = 15;
 			var positionY = 0;
-			var speedY = 0
+			var speedY = randNumY;
 			var misclicks = 0;
 			var interval = setInterval(update, 50);
 
@@ -84,7 +85,7 @@
 			//increase positionX by 10//
 			function update() {
 				positionX = positionX + speed;
-				positionY = positionY + speed;
+				positionY = positionY + speedY;
 				moveBoxTo(positionX, positionY);
 				if(positionX > boardWidth){
 					speed = -speed;
@@ -96,7 +97,7 @@
 					speedY= -speedY;
 				}
 				if(positionY < 0){
-					speedY = -1 * 15;
+					speedY = -1 * -15;
 				}
 			};
 
@@ -106,7 +107,8 @@
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
-				positionX = 0;
+				positionX = randNum;
+				positionY = randNumY;
 				changeBoxText(points);
 				points = points + 1;
 
@@ -119,7 +121,7 @@
 				if(speedY > 0){
 					speedY = speedY + 15;
 				}
-				if (-speedY){
+				if(-speedY){
 					speedY = speedY - 15;
 				}
 			};
