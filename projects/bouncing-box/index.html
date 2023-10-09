@@ -6,9 +6,9 @@
 	<script src="jquery.min.js"></script>
 	<style>
 		.box {
-			width: 70px;
-			height: 70px;
-			background-color: teal;
+			width: 100px;
+			height: 100px;
+			background-color: rgb(204, 230, 230);
 			font-size: 300%;
 			text-align: center;
 			user-select: none;
@@ -50,8 +50,10 @@
 
 			// moves the Box to a new position on the screen along the X-Axis
 			
-			function moveBoxTo(newPositionX = 100) {
+			function moveBoxTo(newPositionX, newPositionY) {
 				box.css("left", newPositionX);
+				box.css("top", newPositionY);
+
 			}
 
 			// changes the text displayed on the Box
@@ -63,11 +65,17 @@
 			//////////////////////////////////////////////////////////////////
 			
 			// TODO 2 - Variable declarations 
+			var boardHeight= jQuery(window).height();
+			
 			
 			var positionX = 0;
 			var points = 0;
 			var speed = 15;
-			
+			var positionY = 0;
+			var speedY = 0
+			var misclicks = 0;
+			var interval = setInterval(update, 50);
+
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
 			it should move the Box to a new location. If the box drifts off the screen
@@ -76,12 +84,19 @@
 			//increase positionX by 10//
 			function update() {
 				positionX = positionX + speed;
-				moveBoxTo(positionX);
+				positionY = positionY + speed;
+				moveBoxTo(positionX, positionY);
 				if(positionX > boardWidth){
 					speed = -speed;
 				}
 				if (positionX < 0 ){
 					speed = -1 * -15;
+				}
+				if(positionY > boardHeight){
+					speedY= -speedY;
+				}
+				if(positionY < 0){
+					speedY = -1 * 15;
 				}
 			};
 
@@ -101,25 +116,21 @@
 				if(-speed){
 					speed = speed - 15;
 				}
-			};
-						///////////challenge attempts. SPOILER!!!! None of these work lol/////////
-			var colorStr = "rgb(50, 25,250)";
-			box.css('background-color', colorStr);{
-				function getRandomColor(){
-					var randomNumberBetween0and255 = 
-						Math.random() * 255; {
-							const color = "rgb(" + r() + "," + r() + "," + r() + ")";
-						}
+				if(speedY > 0){
+					speedY = speedY + 15;
 				}
-			}
-			var misclicks = 0;
-			var interval = setInterval(update, 50);
+				if (-speedY){
+					speedY = speedY - 15;
+				}
+			};
+			///////////Challenge attempts. SPOILER!!!! None of these work lol/////////
 
 			function handleBoardClick() {
 				misclicks = misclicks +1;
 				if(misclicks === 10){
 					function endGame(){
-						clearInterval(interval)
+						clearInterval(interval);
+						console.log("test");
 						}
 					}
 				}
