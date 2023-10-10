@@ -67,15 +67,18 @@
 			// TODO 2 - Variable declarations 
 
 			var boardHeight= jQuery(window).height();
-			var randNum = Math.random() * boardWidth;
+			var randNum = Math.random() * 255;
+			var randNumX = Math.random() * boardWidth;
 			var randNumY= Math.random() * boardHeight;
-			var positionX = randNum;
+			var positionX = randNumX;
 			var points = 0;
 			var speed = randNum;
-			var positionY = 0;
-			var speedY = randNumY;
+			var positionY = randNumY;
+			var speedY = randNum;
 			var clicks = 0;
 			var interval = setInterval(update, 50);
+			var randomColor = Math.random() * 255;
+			var colorStr = "rgb(randomColor + ',' + randomColor + ',' + randomColor)"; // <-- this is a whole string thus the variable is not called
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
 			it should move the Box to a new location. If the box drifts off the screen
@@ -99,15 +102,15 @@
 					speedY = -1 * -15;
 				}
 			};
-
 			/* 
 			This Function will be called each time the box is clicked. Each time it is called,
 			it should increase the points total, increase the speed, and move the box to
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
-				positionX = randNum;
+				positionX = randNumX;
 				positionY = randNumY;
+				box.css('background-color', colorStr);
 				changeBoxText(points);
 				points = points + 1;
 
@@ -124,14 +127,12 @@
 					speedY = speedY - 15;
 				}
 			};
-			///////////Challenge attempts. SPOILER!!!! None of these work lol/////////
-
+			/////////// attempts://///////
 			function handleBoardClick() {
 				misclicks = misclicks +1;
 				if(misclicks === 10){
 					function endGame(){
-						clearInterval(interval);
-						console.log("test");
+						clearInterval(interval)
 						}
 					}
 				}
