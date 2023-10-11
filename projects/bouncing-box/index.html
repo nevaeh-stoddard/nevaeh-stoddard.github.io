@@ -9,12 +9,12 @@
 			width: 100px;
 			height: 100px;
 			background-color: rgb(204, 230, 230);
-			font-size: 300%;
+			font-size: 350%;
 			text-align: center;
 			user-select: none;
 			display: block;
 			position: absolute;
-			top: 100px;
+			top: 200px;
 			left: 200px;  /* <--- Change me! */
 		}
 		.board{
@@ -70,19 +70,22 @@
 			var randNum = Math.random() * 255;
 			var randNumX = Math.random() * boardWidth;
 			var randNumY= Math.random() * boardHeight;
-			var positionX = randNumX;
+			var positionX = 0;
 			var points = 0;
 			var speed = randNum;
-			var positionY = randNumY;
+			var positionY = 0;
 			var speedY = randNum;
 			var clicks = 0;
+			var boardclicks = 0;
 			var interval = setInterval(update, 50);
-			///COLOR SETTER!!!!!!///
+			/*
+			 COLOR SETTER!!!!!!
+			*/
 			var colorStr = function getRandomColor (){
-					var r = Math.random()* 255;
-					var g = Math.random()* 255;
-					var b = Math.random()* 255;
-					return "rgb(" + r + "," + g + "," + b +")";
+				var r = Math.random()* 255;
+				var g = Math.random()* 255;
+				var b = Math.random()* 255;
+				return "rgb(" + r + "," + g + "," + b +")";
 			}
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
@@ -115,10 +118,11 @@
 			function handleBoxClick() {
 				positionX = randNumX;
 				positionY = randNumY;
+				clicks = clicks + 1;
 				box.css('background-color', colorStr);
 				changeBoxText(points);
 				points = points + 1;
-
+				
 				if(speed > 0){
 					speed = speed + 15;
 				}
@@ -132,10 +136,10 @@
 					speedY = speedY - 15;
 				}
 			};
-			/////////// attempts://///////
+			/////////// endgame attempts://///////
 			function handleBoardClick() {
-				misclicks = misclicks +1;
-				if(misclicks === 10){
+				clicks = clicks +1;
+				if(clicks === 10){
 					function endGame(){
 						clearInterval(interval)
 						}
