@@ -77,8 +77,13 @@
 			var speedY = randNum;
 			var clicks = 0;
 			var interval = setInterval(update, 50);
-			var randomColor = Math.random() * 255;
-			var colorStr = "rgb(randomColor + ',' + randomColor + ',' + randomColor)"; // <-- this is a whole string thus the variable randomColor is not called //
+			///COLOR SETTER!!!!!!///
+			var colorStr = function getRandomColor (){
+					var r = Math.random()* 255;
+					var g = Math.random()* 255;
+					var b = Math.random()* 255;
+					return "rgb(" + r + "," + g + "," + b +")";
+			}
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
 			it should move the Box to a new location. If the box drifts off the screen
