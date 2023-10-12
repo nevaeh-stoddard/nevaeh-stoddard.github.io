@@ -46,8 +46,6 @@
 			
 			// Every time the box is clicked, call the handleBoxClick Function (see below)
 			box.on('click', handleBoxClick);
-			board.on('click', handleBoardClick);
-
 			// moves the Box to a new position on the screen along the X-Axis
 			
 			function moveBoxTo(newPositionX, newPositionY) {
@@ -67,20 +65,17 @@
 			// TODO 2 - Variable declarations 
 
 			var boardHeight= jQuery(window).height();
-			var randNum = Math.random() * 255;
+			var randNum = Math.random() * 100;
 			var randNumX = Math.random() * boardWidth;
 			var randNumY= Math.random() * boardHeight;
-			var positionX = 0;
+			var positionX = randNumX;
 			var points = 0;
-			var speed = randNum;
-			var positionY = 0;
-			var speedY = randNum;
+			var speed = 15;
+			var positionY = randNumY;
+			var speedY = 15;
 			var clicks = 0;
-			var boardclicks = 0;
-			var interval = setInterval(update, 50);
-			/*
-			 COLOR SETTER!!!!!!
-			*/
+			
+			// Color string randomizer//
 			var colorStr = function getRandomColor (){
 				var r = Math.random()* 255;
 				var g = Math.random()* 255;
@@ -122,29 +117,8 @@
 				box.css('background-color', colorStr);
 				changeBoxText(points);
 				points = points + 1;
-				
-				if(speed > 0){
-					speed = speed + 15;
-				}
-				if(-speed){
-					speed = speed - 15;
-				}
-				if(speedY > 0){
-					speedY = speedY + 15;
-				}
-				if(-speedY){
-					speedY = speedY - 15;
-				}
 			};
-			/////////// endgame attempts (doesn't work)://///////
-			function handleBoardClick() {
-				clicks = clicks +1;
-				if(clicks === 10){
-					function endGame(){
-						clearInterval(interval)
-						}
-					}
-				}
+			setInterval(update, 50);
 	})();
 	</script>
 </body>
