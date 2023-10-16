@@ -51,7 +51,6 @@
 			function moveBoxTo(newPositionX, newPositionY) {
 				box.css("left", newPositionX);
 				box.css("top", newPositionY);
-
 			}
 
 			// changes the text displayed on the Box
@@ -110,12 +109,17 @@
 			function handleBoxClick() {
 				positionX = Math.random() * boardWidth;
 				positionY = Math.random() * boardHeight;
-				clicks = clicks + 1;
 				box.css('background-color', colorStr);
 				changeBoxText(points);
 				points = points + 1;
 			};
 			setInterval(update, 50);
+			/*
+			To do:
+			something with the "click" var
+			board misclicks
+			3 per click
+			*/
 	})();
 	</script>
 </body>
