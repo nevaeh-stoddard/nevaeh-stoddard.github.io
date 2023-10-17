@@ -40,6 +40,7 @@
 			var box = jQuery('.box');	// reference to the HTML .box element
 			var board = jQuery('.board');	// reference to the HTML .board element
 			var boardWidth = board.width();	// the maximum X-Coordinate of the screen
+			var boardHeight= jQuery(window).height();
 			
 			// Every 50 milliseconds, call the update Function (see below)
 			 	setInterval(update, 50);
@@ -63,7 +64,6 @@
 			
 			// TODO 2 - Variable declarations 
 			
-			var boardHeight= jQuery(window).height();
 			var positionX = Math.random()* boardWidth;
 			var points = 0;
 			var speed = 30;
@@ -131,7 +131,7 @@
 			/*
 			Notes:
 			Unsure how to properly get the "handleBoardClick" function to work. (see above) 
-			The game functions fine but there doesn't seem to be a way to tell that the game has ended
+			The game functions fine but I'm not sure how this'll work
 			I am mainly confused about what to do with the "interval" var
 			ALSO to try -> doing what I just did with color but per 3 clicks
 			*/
