@@ -114,19 +114,23 @@
 				changeBoxText(points);
 				points = points + 1;
 			};
-			setInterval(update, 50);
-			/*
+			
+			var Interval = setInterval(update, 50);
+			
 			function handleBoardClick () {
 				clicks = click + 1;
+				if (clicks > 10){
+					endgame();
 				}
-			}
+			};
 			
 			function endGame(){
-				clearInterval(interval)
-			}
-			*/
+				clearInterval(interval);
+			};
+
 			/*
 			To do:
+			*The box works, but I'm not really sure if it's counting*
 			something with the "click" var
 			board misclicks
 			3 per click
