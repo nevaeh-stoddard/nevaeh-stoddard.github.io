@@ -113,34 +113,25 @@
 				points = points + 1;
 			};
 			
-			/* var clicks = 0;
-				var interval = setInterval(update,50);
+			/* var misclicks = 0;
+			   var interval = setInterval(update, 50);
 			 board.on('click', handleBoardClick);
 			
 			function handleBoardClick () {
-				clicks = clicks + 1;
-				if (clicks === 10){
+				misclicks = clicks + 1;
+				if (misclicks === 10){
 					endGame();
 			}
 			};
 			function endGame(){
-				clearInterval();
+				clearInterval(interval);
+				alert("message");
 			};
-			function clearInterval(){
-				interval = boxStop();
-			};
-			function boxStop(){
-				positionX = 0;
-				positionY = 0;
-				speed = 0;
-				alert("test");
-			};
-
 			To do:
 			Unsure how to properly get the "handleBoardClick" function to work. (see above) 
 			The game functions fine but there doesn't seem to be a way to tell that the game has ended
-			There's some useless redundancy in this code but I am mainly confused about what to do with the "interval" var
-			3 per click intervals
+			I am mainly confused about what to do with the "interval" var
+			doing what I just did with color but per 3 clicks
 			*/
 		})();
 		</script>
