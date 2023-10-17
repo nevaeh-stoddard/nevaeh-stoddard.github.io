@@ -46,6 +46,7 @@
 			
 			// Every time the box is clicked, call the handleBoxClick Function (see below)
 			box.on('click', handleBoxClick);
+			//board.on('click', handleBoardClick);//
 			// moves the Box to a new position on the screen along the X-Axis
 			
 			function moveBoxTo(newPositionX, newPositionY) {
@@ -114,6 +115,16 @@
 				points = points + 1;
 			};
 			setInterval(update, 50);
+			/*
+			function handleBoardClick () {
+				clicks = click + 1;
+				}
+			}
+			
+			function endGame(){
+				clearInterval(interval)
+			}
+			*/
 			/*
 			To do:
 			something with the "click" var
