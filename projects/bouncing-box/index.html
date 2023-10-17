@@ -22,12 +22,12 @@
 		}
 	</style>
 	<!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
-
+	
 </head>
 <body class="board">
 	<!-- HTML for the box -->
 	<div class="box">?</div>
-
+	
 	<script>
 		(function(){
 			'use strict'
@@ -42,18 +42,17 @@
 			var boardWidth = board.width();	// the maximum X-Coordinate of the screen
 			
 			// Every 50 milliseconds, call the update Function (see below)
-			setInterval(update, 50);
+			 	setInterval(update, 50);
 			
 			// Every time the box is clicked, call the handleBoxClick Function (see below)
 			box.on('click', handleBoxClick);
-			//board.on('click', handleBoardClick);//
 			// moves the Box to a new position on the screen along the X-Axis
 			
 			function moveBoxTo(newPositionX, newPositionY) {
 				box.css("left", newPositionX);
 				box.css("top", newPositionY);
 			}
-
+			
 			// changes the text displayed on the Box
 			function changeBoxText(newText) {
 				box.text(newText);
@@ -63,14 +62,13 @@
 			//////////////////////////////////////////////////////////////////
 			
 			// TODO 2 - Variable declarations 
-
+			
 			var boardHeight= jQuery(window).height();
 			var positionX = Math.random()* boardWidth;
 			var points = 0;
-			var speed = 15;
+			var speed = 30;
 			var positionY = Math.random() * boardHeight;
-			var speedY = 15;
-			var clicks = 0;
+			var speedY = 30;
 			
 			// Color string randomizer//
 			var colorStr = function getRandomColor (){
@@ -93,13 +91,13 @@
 					speed = -speed;
 				}
 				if (positionX < 0 ){
-					speed = -1 * -15;
+					speed = -1 * -30;
 				}
 				if(positionY > boardHeight){
 					speedY= -speedY;
 				}
 				if(positionY < 0){
-					speedY = -1 * -15;
+					speedY = -1 * -30;
 				}
 			};
 			/* 
@@ -115,27 +113,36 @@
 				points = points + 1;
 			};
 			
-			var Interval = setInterval(update, 50);
+			/* var clicks = 0;
+				var interval = setInterval(update,50);
+			 board.on('click', handleBoardClick);
 			
 			function handleBoardClick () {
-				clicks = click + 1;
-				if (clicks > 10){
-					endgame();
-				}
+				clicks = clicks + 1;
+				if (clicks === 10){
+					endGame();
+			}
 			};
-			
 			function endGame(){
-				clearInterval(interval);
+				clearInterval();
+			};
+			function clearInterval(){
+				interval = boxStop();
+			};
+			function boxStop(){
+				positionX = 0;
+				positionY = 0;
+				speed = 0;
+				alert("test");
 			};
 
-			/*
 			To do:
-			*The box works, but I'm not really sure if it's counting*
-			something with the "click" var
-			board misclicks
-			3 per click
+			Unsure how to properly get the "handleBoardClick" function to work. (see above) 
+			The game functions fine but there doesn't seem to be a way to tell that the game has ended
+			There's some useless redundancy in this code but I am mainly confused about what to do with the "interval" var
+			3 per click intervals
 			*/
-	})();
-	</script>
+		})();
+		</script>
 </body>
 </html>
