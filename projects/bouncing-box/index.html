@@ -113,31 +113,27 @@
 				changeBoxText(points);
 				points = points + 1;
 			};
-			// It works!!! I need to find a way to reset the box, though// 
+			// for ending the game: // 
 
 			   var misclicks = 0;
 			   var interval = setInterval(update, 50);
+
 			 	board.on('click', handleBoardClick);
 			
 			function handleBoardClick () {
 				misclicks = misclicks + 1;
 				if (misclicks === 10){
+					alert("game over");
 					endGame();
 			}
 			};
 			function endGame(){
-				clearInterval(interval);
-				changeBoxText(points);
-				alert("Game Over");
-				//I have to get it to reload//
-			};
-
+				clearInterval(interval)
+				window.location.reload();
+				};
 			/*
 			Notes:
-		 	(see above) 
-			The game functions fine but I'm not sure how this'll work
-			I'm mainly confused about what to do with the "interval" var
-			ALSO to try -> doing what I just did with color but per 3 clicks
+			To try -> doing what I just did with color but per 3 clicks
 			*/
 		})();
 		</script>
