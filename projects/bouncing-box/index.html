@@ -123,7 +123,9 @@
 			function handleBoardClick () {
 				misclicks = misclicks + 1;
 				if (misclicks === 10){
-					alert("game over");
+					speed = 0;
+					speedY= 0;
+					alert("Game Over");
 					endGame();
 			}
 			};
