@@ -132,11 +132,18 @@
 				clearInterval(interval)
 				window.location.reload();
 				};
+		})();
 			/*
 			Notes:
-			To try -> doing what I just did with color but per 3 clicks
+			To try -> doing what I just did with color but per 3 clicks (below)
+			var clicks = 0;
+			under handleBoxClick:
+			clicks = clicks + 1;
+			if (clicks === 3){
+				box.css('background-color', colorStr)
+				clicks = 0; -> I need the # of clicks to reset once the box is clicked 3 times. Would this work?
+			}
 			*/
-		})();
 		</script>
 </body>
 </html>
