@@ -66,9 +66,10 @@
 			
 			var positionX = Math.random()* boardWidth;
 			var points = 0;
-			var speed = 30;
+			var speed = 15;
 			var positionY = Math.random() * boardHeight;
-			var speedY = 30;
+			var speedY = 15;
+			var resetPts = 0;
 			
 			// Color string randomizer//
 			var colorStr = function getRandomColor (){
@@ -91,13 +92,13 @@
 					speed = -speed;
 				}
 				if (positionX < 0 ){
-					speed = -1 * -30;
+					speed = -1 * -15;
 				}
 				if(positionY > boardHeight){
 					speedY= -speedY;
 				}
 				if(positionY < 0){
-					speedY = -1 * -30;
+					speedY = -1 * -15;
 				}
 			};
 			/* 
@@ -112,8 +113,9 @@
 				changeBoxText(points);
 				points = points + 1;
 			};
-			
-			/* var misclicks = 0;
+			// It works!!! I need to find a way to reset the box, though// 
+
+			   var misclicks = 0;
 			   var interval = setInterval(update, 50);
 			 	board.on('click', handleBoardClick);
 			
@@ -125,9 +127,10 @@
 			};
 			function endGame(){
 				clearInterval(interval);
-				alert("message");
+				changeBoxText(points);
+				points = points - points;
+				alert("Game Over");
 			};
-			*/
 
 			/*
 			Notes:
