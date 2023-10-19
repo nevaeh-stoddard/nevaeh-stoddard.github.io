@@ -101,13 +101,6 @@
 				}
 			};
 
-			function clickCounter(){
-				clicks = clicks + 1;
-			   if (clicks === 3){
-				   box.css('background-color', colorStr); 
-				   return clicks = 0;
-				};
-			};
 			/* 
 			This Function will be called each time the box is clicked. Each time it is called,
 			it should increase the points total, increase the speed, and move the box to
@@ -122,7 +115,15 @@
 				changeBoxText(points);
 				points = points + 1;
 			};
-		
+			
+			///Counts for 3 clicks and then resets///	
+			function clickCounter(){
+				clicks = clicks + 1;
+			   if (clicks === 3){
+				   box.css('background-color', colorStr); 
+				   return clicks = 0;
+				};
+			};
 			// for ending the game: // 
 
 			   var misclicks = 0;
