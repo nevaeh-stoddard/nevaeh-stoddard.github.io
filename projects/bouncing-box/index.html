@@ -9,7 +9,7 @@
 			width: 100px;
 			height: 100px;
 			background-color: rgb(204, 230, 230);
-			font-size: 350%;
+			font-size: 400%;
 			text-align: center;
 			user-select: none;
 			display: block;
@@ -36,7 +36,7 @@
 			//////////////////////////////////////////////////////////////////
 			/////////////////// SETUP DO NOT DELETE //////////////////////////
 			//////////////////////////////////////////////////////////////////
-			
+			var clicks = 0;
 			var box = jQuery('.box');	// reference to the HTML .box element
 			var board = jQuery('.board');	// reference to the HTML .board element
 			var boardWidth = board.width();	// the maximum X-Coordinate of the screen
@@ -100,6 +100,16 @@
 					speedY = -1 * -15;
 				}
 			};
+
+			function clickCounter(){
+				clicks = clicks + 1;
+			   if (clicks === 3){
+				   box.css('background-color', colorStr);
+				   speed = speed + 5;
+				   speedY = speedY + 5;	 
+				   return clicks = 0;
+				};
+			};
 			/* 
 			This Function will be called each time the box is clicked. Each time it is called,
 			it should increase the points total, increase the speed, and move the box to
@@ -108,7 +118,7 @@
 			function handleBoxClick() {
 				positionX = Math.random() * boardWidth;
 				positionY = Math.random() * boardHeight;
-				box.css('background-color', colorStr);
+				clickCounter();
 				changeBoxText(points);
 				points = points + 1;
 			};
@@ -126,24 +136,13 @@
 					speedY= 0;
 					alert("Game Over");
 					endGame();
-			}
+				}
 			};
 			function endGame(){
 				clearInterval(interval)
 				window.location.reload();
 				};
 		})();
-			/*
-			Notes:
-			To try -> doing what I just did with color but per 3 clicks (below)
-			var clicks = 0;
-			under handleBoxClick:
-			clicks = clicks + 1;
-			if (clicks === 3){
-				box.css('background-color', colorStr)
-				clicks = 0; -> I need the # of clicks to reset once the box is clicked 3 times. Would this work?
-			}
-			*/
 		</script>
 </body>
 </html>
