@@ -115,8 +115,8 @@
 				changeBoxText(points);
 				points = points + 1;
 			};
-			
-			///Counts for 3 clicks and then resets///	
+
+			// Checks for 3 clicks and then resets the value //	
 			function clickCounter(){
 				clicks = clicks + 1;
 			   if (clicks === 3){
@@ -124,8 +124,8 @@
 				   return clicks = 0;
 				};
 			};
-			// for ending the game: // 
 
+			// For ending the game // 
 			   var misclicks = 0;
 			   var interval = setInterval(update, 50);
 
