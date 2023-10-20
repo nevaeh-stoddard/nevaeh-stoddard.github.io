@@ -103,9 +103,7 @@
 
 			/* 
 			This Function will be called each time the box is clicked. Each time it is called,
-			it should increase the points total, increase the speed, and move the box to
-			the left side of the screen.
-			*/
+			it should increase the points total, increase the speed, and move the box */
 			function handleBoxClick() {
 				positionX = Math.random() * boardWidth;
 				positionY = Math.random() * boardHeight;
@@ -113,7 +111,6 @@
 				changeBoxText(points);
 				points = points + 1;
 			};
-
 			// Checks for 3 clicks and then resets the value //	
 			function clickCounter(){
 				clicks = clicks + 1;
