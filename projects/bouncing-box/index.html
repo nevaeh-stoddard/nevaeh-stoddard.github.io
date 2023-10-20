@@ -36,7 +36,6 @@
 			//////////////////////////////////////////////////////////////////
 			/////////////////// SETUP DO NOT DELETE //////////////////////////
 			//////////////////////////////////////////////////////////////////
-			var clicks = 0;
 			var box = jQuery('.box');	// reference to the HTML .box element
 			var board = jQuery('.board');	// reference to the HTML .board element
 			var boardWidth = board.width();	// the maximum X-Coordinate of the screen
@@ -69,6 +68,7 @@
 			var speed = 15;
 			var positionY = Math.random() * boardHeight;
 			var speedY = 15;
+			var clicks = 0;
 			
 			// Color string randomizer//
 			var colorStr = function getRandomColor (){
@@ -109,8 +109,6 @@
 			function handleBoxClick() {
 				positionX = Math.random() * boardWidth;
 				positionY = Math.random() * boardHeight;
-				speed = speed + 5;
-				speedY = speedY + 5;
 				clickCounter();
 				changeBoxText(points);
 				points = points + 1;
@@ -124,7 +122,6 @@
 				   return clicks = 0;
 				};
 			};
-
 			// For ending the game // 
 			   var misclicks = 0;
 			   var interval = setInterval(update, 50);
