@@ -104,6 +104,14 @@
 				changeBoxText(points);
 				points = points + 1;
 			};
+			// This checks for 3 clicks, changes color, and then resets the value //	
+			function clickCounter(){
+				clicks = clicks + 1;
+				if (clicks === 3){
+				box.css('background-color', colorStr); 
+				return clicks = 0;
+				};
+			};
 			// Color string randomizer //
 			var colorStr = function getRandomColor (){
 				var r = Math.random()* 255;
@@ -111,18 +119,9 @@
 				var b = Math.random()* 255;
 				return "rgb(" + r + "," + g + "," + b +")";
 			};
-			// This checks for 3 clicks, changes color, and then resets the value //	
-			function clickCounter(){
-				clicks = clicks + 1;
-			   if (clicks === 3){
-				   box.css('background-color', colorStr); 
-				   return clicks = 0;
-				};
-			};
 			// For ending the game // 
 			   var misclicks = 0;
 			   var interval = setInterval(update, 50);
-
 			 	board.on('click', handleBoardClick);
 			
 			function handleBoardClick () {
