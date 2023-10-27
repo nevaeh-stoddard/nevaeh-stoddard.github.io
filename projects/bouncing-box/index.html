@@ -18,7 +18,7 @@
 			left: 200px;  /* <--- Change me! */
 		};
 		.board{
-			height: 100vh;
+			height: 300vh;
 		};
 	</style>
 	<!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
@@ -120,13 +120,13 @@
 				return "rgb(" + r + "," + g + "," + b +")";
 			};
 			// For ending the game // 
-			   var misclicks = 0;
+			   var misclick = 0;
 			   var interval = setInterval(update, 50);
-			board.on('click', handleBoardClick);
+				board.on('click', handleBoardClick);
 			
 			function handleBoardClick () {
-				misclicks = misclicks + 1;
-				if (misclicks === 10){
+				misclick = misclick + 1;
+				if (misclick === 10){
 					speed = 0;
 					speedY= 0;
 					alert("Game Over");
