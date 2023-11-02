@@ -54,11 +54,20 @@ var init = function (window) {
             }
         }
     
-        /* 
-        This Function should check the position of a circle that is passed to the 
-        Function. If that circle drifts off the screen, this Function should move
-        it to the opposite side of the screen.
+        /*
+        var right = circle.x + circle.radius;
+        var left = circle.x + circle.radius;
+        var bottom = circle.y + circle.radius;
+        var top = circle.y + circle.radius;
+        
+        I'm not really sure what the above does
         */
+       
+       /* 
+       This Function should check the position of a circle that is passed to the 
+       Function. If that circle drifts off the screen, this Function should move
+       it to the opposite side of the screen.
+       */
         game.checkCirclePosition = function(circle) {
 
             // if the circle has gone past the RIGHT side of the screen then place it on the LEFT
@@ -77,10 +86,6 @@ var init = function (window) {
                 circle.y = canvas.height;
             }
 
-            var right = circle.x + circle.radius;
-            var left = circle.x + circle.radius;
-            var bottom = circle.y + circle.radius;
-            var top = circle.y + circle.radius;
 
             // YOUR TODO 6 CODE ENDS HERE //////////////////////////
         }
