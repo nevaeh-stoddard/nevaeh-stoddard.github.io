@@ -69,7 +69,6 @@
 			var positionY = Math.random() * boardHeight;
 			var speedY = 15;
 			var clicks = 0;
-			
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
 			it should move the Box to a new location. If the box drifts off the screen
@@ -93,7 +92,6 @@
 					speedY = speedY * -1;
 				}
 			};
-
 			/* 
 			This Function will be called each time the box is clicked. Each time it is called,
 			it should increase the points total, increase the speed, and move the box */
@@ -104,7 +102,7 @@
 				changeBoxText(points);
 				points = points + 1;
 			};
-			// This checks for 3 clicks, changes color, and then resets the value //	
+			// This counts 3 clicks, changes color, and then resets the value //	
 			function clickCounter(){
 				clicks = clicks + 1;
 				if (clicks === 3){
