@@ -44,25 +44,15 @@ var init = function (window) {
         In each frame, for every circle, it should redraw that circle
         and check to see if it has drifted off the screen.         
         */
+       // TODO 4 : Update the circle's position //
+       // TODO 5 / 10 : Call game.checkCirclePosition() on your circles.
+       // TODO 8 : Iterate over the array
         function update() {
-            // TODO 4 : Update the circle's position //
-            // TODO 5 / 10 : Call game.checkCirclePosition() on your circles.
-            // TODO 8 : Iterate over the array
             for (var i = 0; i < circles.length; i++){
              physikz.updatePosition(circles[i]);
-             game.checkCirclePosition(circles[i])
+             game.checkCirclePosition(circles[i]);
             }
         }
-    
-        /*
-        var right = circle.x + circle.radius;
-        var left = circle.x + circle.radius;
-        var bottom = circle.y + circle.radius;
-        var top = circle.y + circle.radius;
-        
-        I'm not really sure what the above does
-        */
-       
        /* 
        This Function should check the position of a circle that is passed to the 
        Function. If that circle drifts off the screen, this Function should move
@@ -70,7 +60,7 @@ var init = function (window) {
        */
         game.checkCirclePosition = function(circle) {
 
-            // if the circle has gone past the RIGHT side of the screen then place it on the LEFT
+            // if the circle has gone past the RIGHT side of the screen then place it on the LEFT //
             if ( circle.x > canvas.width ) {
                 circle.x = 0;
             }
