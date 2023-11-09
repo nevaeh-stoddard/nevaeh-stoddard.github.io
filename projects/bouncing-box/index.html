@@ -68,13 +68,11 @@
 			var speed = 15;
 			var positionY = Math.random() * boardHeight;
 			var speedY = 15;
-			var clicks = 0;
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
 			it should move the Box to a new location. If the box drifts off the screen
 			turn it around! 
 			*/
-			//increase positionX by 10//
 			function update() {
 				positionX = positionX + speed;
 				positionY = positionY + speedY;
@@ -103,6 +101,7 @@
 				points = points + 1;
 			};
 			// This counts 3 clicks, changes color, and then resets the value //	
+			var clicks = 0;
 			function clickCounter(){
 				clicks = clicks + 1;
 				if (clicks === 3){
@@ -118,13 +117,13 @@
 				return "rgb(" + r + "," + g + "," + b +")";
 			};
 			// For ending the game // 
-			   var misclick = 0;
-			   var interval = setInterval(update, 50);
-				board.on('click', handleBoardClick);
+			var interval = setInterval(update, 50);
+			board.on('click', handleBoardClick);
+			var misclicks = 0;
 			
 			function handleBoardClick () {
-				misclick = misclick + 1;
-				if (misclick === 10){
+				misclicks = misclicks + 1;
+				if (misclicks === 10){
 					speed = 0;
 					speedY= 0;
 					alert("Game Over");

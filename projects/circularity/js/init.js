@@ -44,8 +44,6 @@ var init = function (window) {
         In each frame, for every circle, it should redraw that circle
         and check to see if it has drifted off the screen.         
         */
-       // TODO 4 : Update the circle's position //
-       // TODO 5 / 10 : Call game.checkCirclePosition() on your circles.
        // TODO 8 : Iterate over the array
         function update() {
             for (var i = 0; i < circles.length; i++){
