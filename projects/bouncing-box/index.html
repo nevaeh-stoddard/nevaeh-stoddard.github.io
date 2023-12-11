@@ -123,7 +123,7 @@
 			
 			function handleBoardClick () {
 				misclicks = misclicks + 1;
-				if (misclicks === 10){
+				if (misclicks > 10){
 					alert("Game Over");
 					endGame();
 				}
